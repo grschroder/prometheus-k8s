@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: promsrv
   namespace: monitoring
   labels:
     app: promsrv
 spec:
+  serviceName: "promsrv"
   replicas: 1
   selector:
     matchLabels:
